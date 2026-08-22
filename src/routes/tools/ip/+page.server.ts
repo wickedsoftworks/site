@@ -1,4 +1,5 @@
 import type { PageServerLoad } from './$types';
+import { classify, family, isAddress } from './classify';
 
 const INTERESTING = [
 	'user-agent',
@@ -20,28 +21,25 @@ const FORWARDING = [
 	'x-forwarded-host'
 ] as const;
 
-function classify(address: string): string {
-	if (address === '::1' || address === '127.0.0.1' || address.startsWith('127.')) {
-		return 'Loopback: you are on the same machine as the server';
+const CLIENT_IP_HEADERS = ['cf-connecting-ip', 'true-client-ip', 'x-real-ip', 'x-forwarded-for'];
+
+function resolveAddress(request: Request, fallback: string): string {
+	for (const name of CLIENT_IP_HEADERS) {
+		const candidate = (request.headers.get(name) ?? '').split(',')[0].trim();
+		if (candidate && isAddress(candidate)) return candidate;
 	}
-	if (/^10\./.test(address) || /^192\.168\./.test(address)) return 'Private IPv4 range';
-	if (/^172\.(1[6-9]|2\d|3[01])\./.test(address)) return 'Private IPv4 range';
-	if (/^169\.254\./.test(address)) return 'Link-local IPv4';
-	if (address.startsWith('fe80:')) return 'Link-local IPv6';
-	if (address.startsWith('fc') || address.startsWith('fd')) return 'Unique local IPv6';
-	if (address.includes(':')) return 'Public IPv6';
-	if (/^\d{1,3}(\.\d{1,3}){3}$/.test(address)) return 'Public IPv4';
-	return 'Unrecognized format';
+	return fallback;
 }
 
 export const load: PageServerLoad = ({ getClientAddress, request, url }) => {
-	let address: string;
+	let peer: string;
 	try {
-		address = getClientAddress();
+		peer = getClientAddress();
 	} catch {
-		// Some adapters cannot determine it (e.g. a prerender pass).
-		address = '';
+		peer = '';
 	}
+
+	const address = resolveAddress(request, peer);
 
 	const pick = (names: readonly string[]) =>
 		names
@@ -51,7 +49,8 @@ export const load: PageServerLoad = ({ getClientAddress, request, url }) => {
 	return {
 		address,
 		kind: address ? classify(address) : '',
-		family: address ? (address.includes(':') ? 'IPv6' : 'IPv4') : '',
+		family: address ? family(address) : '',
+		peer: peer && peer !== address ? peer : '',
 		protocol: url.protocol.replace(':', ''),
 		host: url.host,
 		method: request.method,
