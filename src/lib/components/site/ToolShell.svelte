@@ -7,8 +7,6 @@
 	let { slug, children }: { slug: string; children: Snippet } = $props();
 
 	const tool = $derived(toolBySlug(slug));
-	// Four siblings, wrapping around the list so a tool near the end still gets
-	// suggestions rather than an empty row.
 	const others = $derived.by(() => {
 		const index = tools.findIndex((t) => t.slug === slug);
 		if (index === -1) return tools.slice(0, 4);

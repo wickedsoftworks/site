@@ -28,10 +28,6 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<!-- The direction contract for this build lives in src/app.html, which is the
-     only place a comment survives the production build; Svelte strips comments
-     from compiled component markup. -->
-
 <ModeWatcher />
 
 <div class="flex min-h-screen flex-col">
@@ -40,8 +36,6 @@
 		{@render children()}
 	</main>
 
-	<!-- No top margin: every page already closes with its own bottom padding,
-	     and stacking the two left a dead band above the rule. -->
 	<footer class="border-t border-line">
 		<div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
 			<div class="flex flex-col gap-10 sm:flex-row sm:justify-between sm:gap-16">
@@ -79,7 +73,7 @@
 			</div>
 
 			<div class="mt-12 border-t border-line pt-6">
-				<p class="font-mono text-xs text-fg-subtle">github.com/wickedsoftworks</p>
+				<p class="font-mono text-xs text-fg-subtle">Wicked Softworks © 2026</p>
 			</div>
 		</div>
 	</footer>

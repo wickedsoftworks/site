@@ -6,12 +6,7 @@
 	let mode = $state<'encode' | 'decode'>('encode');
 	let urlSafe = $state(false);
 	let input = $state('');
-
-	/**
-	 * btoa/atob only handle Latin-1, so anything outside it (emoji, accents,
-	 * most of the world's writing) has to go through UTF-8 bytes first. This is
-	 * the bug most hand-rolled Base64 helpers ship with.
-	 */
+	
 	function encode(text: string): string {
 		const bytes = new TextEncoder().encode(text);
 		let binary = '';

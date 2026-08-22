@@ -10,11 +10,6 @@
 		return () => clearInterval(id);
 	});
 
-	/**
-	 * Accepts seconds, milliseconds, microseconds and an ISO date string, and
-	 * guesses which by magnitude. Getting seconds-versus-milliseconds wrong is
-	 * the entire reason this tool is worth having.
-	 */
 	const parsed = $derived.by(() => {
 		const text = raw.trim();
 		if (!text) return null;

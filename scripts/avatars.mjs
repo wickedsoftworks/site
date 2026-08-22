@@ -1,20 +1,3 @@
-/**
- * Build-time avatar pipeline.
- *
- * Reads src/lib/data/members.json, fetches each member's `avatar` URL, and
- * writes a normalized square to static/avatars/<id>.webp. Visitors then load a
- * local, correctly-sized file: no third-party request from their browser, and
- * no layout shift from a remote image arriving at some arbitrary dimension.
- *
- * Runs from `predev` and `prebuild`. A manifest records the source URL and the
- * output settings per member, so an unchanged entry is skipped on rebuild and
- * only genuinely new or edited avatars cost a network round trip.
- *
- * This never fails the build. A dead URL, an offline machine, or an
- * unreadable image logs a warning and leaves that avatar missing; the UI falls
- * back to an initials monogram. Losing a picture is not worth a broken deploy.
- */
-
 import { readFile, writeFile, mkdir, unlink, readdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
@@ -26,12 +9,10 @@ const SOURCE = path.join(root, 'src/lib/data/members.json');
 const OUT_DIR = path.join(root, 'static/avatars');
 const MANIFEST = path.join(OUT_DIR, '.manifest.json');
 
-/** 2x the largest place an avatar is rendered (96px in the profile dialog). */
 const SIZE = 256;
 const QUALITY = 82;
 const FETCH_TIMEOUT_MS = 10_000;
 
-/** Bumped when the output settings change, to force a regeneration. */
 const RECIPE = `webp-${SIZE}-q${QUALITY}-cover-v1`;
 
 async function readManifest() {
@@ -80,8 +61,6 @@ async function main() {
 			continue;
 		}
 
-		// Skip when the source and the output recipe are both unchanged and the
-		// file is genuinely still on disk.
 		const prior = manifest[id];
 		if (prior && prior.avatar === avatar && prior.recipe === RECIPE && existsSync(out)) {
 			next[id] = prior;
@@ -99,13 +78,10 @@ async function main() {
 			built++;
 		} catch (error) {
 			failures.push(`${id}: ${error.message}`);
-			// Keep any previously built file rather than deleting a good avatar
-			// because one build had no network.
 			if (prior && existsSync(out)) next[id] = prior;
 		}
 	}
 
-	// Drop avatars for members who no longer exist.
 	const live = new Set(members.map((m) => m.id));
 	for (const file of await readdir(OUT_DIR)) {
 		if (!file.endsWith('.webp')) continue;
@@ -125,6 +101,5 @@ async function main() {
 }
 
 main().catch((error) => {
-	// Even a total failure here is non-fatal: the site renders monograms.
 	console.warn(`avatars: skipped (${error.message})`);
 });

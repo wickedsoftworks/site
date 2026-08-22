@@ -6,17 +6,17 @@
 </script>
 
 <svelte:head>
-	<title>Tools at Wicked Softworks</title>
+	<title>Tools @ Wicked Softworks</title>
 	<meta
 		name="description"
-		content="Small developer utilities: UUIDs, Base64, hashing, JWT decoding, QR codes and more. Free, no sign-up, and almost all of them run entirely in your browser."
+		content="Small developer utilities without ads, ran fully in your browser."
 	/>
 </svelte:head>
 
 <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
 	<PageHeader
 		title="Tools"
-		lead="Small utilities we kept needing and got tired of looking up. No sign-up, no adverts, and every one of them except the IP lookup runs entirely in your browser, so nothing you paste is sent anywhere."
+		lead="Small developer utilities without ads, ran fully in your browser."
 	/>
 
 	<div class="ruled-fill-3 mt-12 ruled sm:grid-cols-2 lg:grid-cols-3">

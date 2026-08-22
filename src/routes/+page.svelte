@@ -18,7 +18,7 @@
 	<title>Wicked Softworks: an open-source developer collective</title>
 	<meta
 		name="description"
-		content="Wicked Softworks is an open-source developer collective. Everything we build is public: the projects, the people who make them, and the tools we use."
+		content="Wicked Softworks is an open-source developer collective focused on providing useful and polished applications."
 	/>
 </svelte:head>
 
@@ -52,15 +52,12 @@
 </section>
 
 <div class="mx-auto max-w-6xl px-4 sm:px-6">
-	<!-- ========================================================================
-	     PROJECTS
-	     ======================================================================== -->
 	<section class="py-16 sm:py-20">
 		<div class="mb-8 flex items-end justify-between gap-6">
 			<div class="flex flex-col gap-2">
 				<h2 class="text-2xl font-semibold tracking-tight text-fg">Projects</h2>
 				<p class="text-sm leading-relaxed text-fg-muted">
-					What the collective is building, and where the code lives.
+					What we've created, and where the code lives.
 				</p>
 			</div>
 			<a
@@ -80,10 +77,6 @@
 			{/each}
 		</div>
 	</section>
-
-	<!-- ========================================================================
-	     MEMBERS
-	     ======================================================================== -->
 	<section class="border-t border-line py-16 sm:py-20">
 		<div class="mb-8 flex items-end justify-between gap-6">
 			<div class="flex flex-col gap-2">
@@ -102,9 +95,6 @@
 				/>
 			</a>
 		</div>
-
-		<!-- Faces link straight to the directory; the profile dialog lives there
-		     rather than being duplicated on the home page. -->
 		<a
 			href={resolve('/members')}
 			class="flex flex-wrap items-center gap-x-3 gap-y-4 rounded-md px-1 py-2 transition-colors duration-150 hover:bg-surface-2"
@@ -117,10 +107,6 @@
 			{/each}
 		</a>
 	</section>
-
-	<!-- ========================================================================
-	     TOOLS
-	     ======================================================================== -->
 	<section class="border-t border-line py-16 sm:py-20">
 		<div class="mb-8 flex items-end justify-between gap-6">
 			<div class="flex flex-col gap-2">
@@ -156,37 +142,6 @@
 					</span>
 				</a>
 			{/each}
-		</div>
-	</section>
-
-	<!-- ========================================================================
-	     CLOSE: the honest note about what is still standing in.
-	     ======================================================================== -->
-	<section class="border-t border-line py-16 sm:py-20">
-		<div
-			class="flex flex-col gap-6 panel p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8"
-		>
-			<div class="flex max-w-xl flex-col gap-2">
-				<div class="flex flex-wrap items-center gap-3">
-					<h2 class="text-lg font-semibold tracking-tight text-fg">Not real yet</h2>
-					<Placeholder />
-				</div>
-				<p class="text-sm leading-relaxed text-fg-muted">
-					Every project and member above is standing in for content that does not exist yet, and is
-					marked as such. Projects live in
-					<code class="rounded-sm bg-surface-2 px-1.5 py-0.5 font-mono text-xs text-fg"
-						>src/lib/data/site.ts</code
-					>
-					and members in
-					<code class="rounded-sm bg-surface-2 px-1.5 py-0.5 font-mono text-xs text-fg"
-						>src/lib/data/members.json</code
-					>. The tools are real and working.
-				</p>
-			</div>
-			<Button href={resolve('/tools')} variant="outline" size="lg" class="shrink-0 self-start">
-				Try the tools
-				<ArrowRight />
-			</Button>
 		</div>
 	</section>
 </div>

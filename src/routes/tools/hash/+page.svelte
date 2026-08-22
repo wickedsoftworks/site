@@ -17,8 +17,6 @@
 	$effect(() => {
 		const text = input;
 		let cancelled = false;
-		// Empty input hashes to a real, well-known digest, but showing it invites
-		// people to copy the hash of nothing by mistake.
 		if (!text) {
 			digests = [];
 			return;

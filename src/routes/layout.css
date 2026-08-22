@@ -233,7 +233,6 @@
 		background: var(--fg-subtle);
 	}
 
-	/* One focus ring for the whole site. */
 	:focus-visible {
 		outline: 2px solid var(--brand);
 		outline-offset: 2px;
@@ -292,22 +291,6 @@
 	}
 }
 
-/* Hairline grid: cells divided by shared 1px rules, so a list reads as one
-   ruled table rather than a scatter of cards. Set the column count in the
-   markup; everything else is here.
-
-   Each cell draws its own top and left rule as a box-shadow rather than the
-   grid using a gap over a rule-coloured parent. The gap approach is simpler
-   but breaks on a row that does not fill: the leftover track has no cell to
-   cover it, so the parent's rule colour shows through as a solid block.
-   Shadows go on the top and left specifically, because a later sibling paints over an
-   earlier one, so a leading edge is never covered the way a trailing edge
-   would be. The first row and column are clipped by overflow, and the
-   container's own border supplies those.
-
-   Rules only exist where a cell exists, so a short last row leaves its rules
-   half-drawn. Pair this with `ruled-fill-2` or `ruled-fill-3` below, which
-   widen the last cell to close the row. */
 @utility ruled {
 	display: grid;
 	background-color: var(--bg);
@@ -322,15 +305,6 @@
 	}
 }
 
-/* Close a short last row by widening its final cell, so the grid always reads
-   as a complete rectangle instead of a staircase with rules stopping mid-air.
-   `:last-child:nth-child(<step>n + <remainder>)` identifies the item count's
-   remainder without anything having to know how many items there are.
-
-   Two utilities rather than one because the fill depends on the column count,
-   which is set in the markup: use `-2` on a grid that tops out at two columns
-   and `-3` on one that reaches three. Applying either to a grid that is a
-   single column at that breakpoint is harmless, because there is nothing to fill. */
 @utility ruled-fill-2 {
 	@variant sm {
 		& > *:last-child:nth-child(odd) {
@@ -346,8 +320,6 @@
 		}
 	}
 	@variant lg {
-		/* Higher specificity than the two-column rule above, so a grid that is
-		   two columns at sm and three at lg lands on the right span. */
 		& > *:last-child:nth-child(3n + 1) {
 			grid-column: span 3;
 		}

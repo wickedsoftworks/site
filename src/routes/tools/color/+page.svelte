@@ -8,7 +8,6 @@
 
 	const NAMED_FALLBACK = /^[a-z]+$/i;
 
-	/** Let the browser do the parsing; it already knows every CSS colour form. */
 	function parse(text: string): RGB | null {
 		const value = text.trim();
 		if (!value) return null;
@@ -18,8 +17,6 @@
 		probe.fillStyle = '#000';
 		const before = probe.fillStyle;
 		probe.fillStyle = value;
-		// An invalid colour leaves fillStyle untouched, so a value that "parses"
-		// to the sentinel is only real if the user actually typed black.
 		if (probe.fillStyle === before && !/^(#000000|#000|black|rgb\(0, ?0, ?0\))$/i.test(value)) {
 			if (!NAMED_FALLBACK.test(value)) return null;
 			return null;
@@ -52,7 +49,6 @@
 		return `hsl(${round(h)} ${round(s * 100)}% ${round(l * 100)}%${a < 1 ? ` / ${a}` : ''})`;
 	}
 
-	/** sRGB → linear → OKLab → OKLCH, per Björn Ottosson's reference conversion. */
 	function toOklch({ r, g, b, a }: RGB): string {
 		const lin = (c: number) => {
 			const v = c / 255;
@@ -85,7 +81,6 @@
 		];
 	});
 
-	/** Relative luminance, for the contrast readout against black and white. */
 	const contrast = $derived.by(() => {
 		if (!parsed) return null;
 		const channel = (c: number) => {

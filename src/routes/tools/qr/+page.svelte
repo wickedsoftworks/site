@@ -11,8 +11,6 @@
 	let dataUrl = $state('');
 	let error = $state('');
 
-	// qrcode is the only third-party library on the site, so it is loaded on
-	// demand rather than shipped to every visitor of every other page.
 	$effect(() => {
 		const value = text;
 		const options = { width: size, margin, errorCorrectionLevel: level };
@@ -130,8 +128,6 @@
 					{error}
 				</p>
 			{:else if dataUrl}
-				<!-- White plate regardless of theme: a QR code on a dark ground does
-				     not scan on most readers. -->
 				<div class="w-full rounded-md border border-line bg-white p-4">
 					<img src={dataUrl} alt="QR code for the text entered above" class="w-full" />
 				</div>

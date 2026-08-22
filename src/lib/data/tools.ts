@@ -1,12 +1,3 @@
-/**
- * The tools registry.
- *
- * Every entry maps to a route at /tools/<slug>. Adding a tool means adding an
- * entry here and creating that route; the index page and the "more tools"
- * footer on each tool page both read from this list, so nothing else needs
- * updating.
- */
-
 import type { Component } from 'svelte';
 import Globe from '@lucide/svelte/icons/globe';
 import Binary from '@lucide/svelte/icons/binary';
@@ -23,10 +14,8 @@ import Shuffle from '@lucide/svelte/icons/shuffle';
 export interface Tool {
 	slug: string;
 	name: string;
-	/** One line, sentence case, describing what it does rather than what it is. */
 	blurb: string;
 	icon: Component;
-	/** True when the tool needs the server; everything else runs in the browser. */
 	server?: boolean;
 }
 

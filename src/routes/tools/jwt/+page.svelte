@@ -15,7 +15,6 @@
 		return JSON.parse(new TextDecoder().decode(bytes));
 	}
 
-	/** Claims that carry a Unix timestamp, so they can be shown as real dates. */
 	const TIME_CLAIMS = new Set(['exp', 'iat', 'nbf', 'auth_time', 'updated_at']);
 
 	const decoded = $derived.by(() => {

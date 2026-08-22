@@ -17,8 +17,6 @@
 		try {
 			await navigator.clipboard.writeText(value);
 		} catch {
-			// Clipboard is unavailable over plain HTTP and in some embedded
-			// browsers. Fall back to a selection the user can copy by hand.
 			const area = document.createElement('textarea');
 			area.value = value;
 			area.style.position = 'fixed';

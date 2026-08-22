@@ -4,13 +4,9 @@
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
-
-	// What the browser knows and the server does not. Read on the client only,
-	// so it stays empty during server rendering rather than mismatching.
 	let client = $state<{ label: string; value: string }[]>([]);
 
 	$effect(() => {
-		// Both are widely shipped but still outside the DOM lib's typings.
 		const nav = navigator as Navigator & {
 			deviceMemory?: number;
 			userAgentData?: { platform?: string };

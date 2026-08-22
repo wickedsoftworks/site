@@ -30,8 +30,6 @@
 </script>
 
 <Dialog.Root bind:open>
-	<!-- Wider than the stock lg: at 32rem the name competes with the close
-	     button and the placeholder tag, and two-word names wrap. -->
 	<Dialog.Content class="gap-0 p-0 sm:max-w-xl">
 		{#if member}
 			<div class="flex flex-col gap-5 p-6">

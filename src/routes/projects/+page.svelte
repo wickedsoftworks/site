@@ -10,17 +10,12 @@
 	import ProjectCard from '$lib/components/site/ProjectCard.svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import Github from '$lib/components/site/GithubIcon.svelte';
-
-	// Listed in lifecycle order: what is moving, what needs hands, what is set
-	// aside, what shipped, what is agreed but not started.
 	const order: ProjectStatus[] = ['active', 'seeking', 'paused', 'shipped', 'planned'];
 
 	const ordered = $derived(
 		[...projects].sort((a, b) => order.indexOf(a.status) - order.indexOf(b.status))
 	);
 
-	// A count per state, so the shape of the list is readable before scrolling
-	// it, without splitting five projects across five near-empty sections.
 	const counts = $derived(
 		order
 			.map((status) => ({
@@ -36,14 +31,14 @@
 	<title>Projects at Wicked Softworks</title>
 	<meta
 		name="description"
-		content="Every project Wicked Softworks is building: what it is, what state it is in, and where the code lives."
+		content="All our projects, their status, and where the code lives."
 	/>
 </svelte:head>
 
 <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
 	<PageHeader
 		title="Projects"
-		lead="Everything the collective has taken on. Projects stay listed through their whole life, whether they are active, looking for contributors, paused or shipped, because what has been delivered counts as much as what is in progress."
+		lead="All of our projects. Projects stay listed through their whole life, whether they are active, looking for contributors, paused or shipped."
 	>
 		{#snippet actions()}
 			<Button href={GITHUB_ORG} target="_blank" rel="noopener noreferrer" variant="brand" size="lg">

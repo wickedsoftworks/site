@@ -18,25 +18,23 @@
 </script>
 
 <svelte:head>
-	<title>Members at Wicked Softworks</title>
+	<title>Members @ Wicked Softworks</title>
 	<meta name="description" content="The people who build Wicked Softworks." />
 </svelte:head>
 
 <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
 	<PageHeader
 		title="Members"
-		lead="The people who make up the collective. Select anyone to see what they work on and where to find them."
+		lead="The people who make up the group. Click on anyone to see what they've collaborated on and where to find them."
 	>
 		{#snippet actions()}
 			<Button href={GITHUB_ORG} target="_blank" rel="noopener noreferrer" variant="brand" size="lg">
 				<Github />
-				GitHub organization
+				GitHub Organization
 			</Button>
 		{/snippet}
 	</PageHeader>
 
-	<!-- An avatar wall, not a ruled table: faces are the content here, and rules
-	     between them would fight the circles. -->
 	<ul class="grid grid-cols-[repeat(auto-fill,minmax(9rem,1fr))] gap-x-2 gap-y-6 py-12 sm:gap-y-8">
 		{#each members as member (member.id)}
 			<li>
@@ -51,8 +49,7 @@
 						size={64}
 						class="transition-transform duration-150 group-hover:-translate-y-0.5"
 					/>
-					<!-- Names wrap rather than truncate: a directory whose whole job is
-					     naming people should not cut the names off. -->
+
 					<span class="flex w-full flex-col items-center gap-0.5">
 						<span class="text-center text-sm font-medium text-balance text-fg">
 							{member.name}
@@ -72,8 +69,8 @@
 		<div class="flex max-w-lg flex-col gap-2">
 			<h2 class="text-lg font-semibold tracking-tight text-fg">Want to join?</h2>
 			<p class="text-sm leading-relaxed text-fg-muted">
-				The collective runs in the open. Contributions arrive through the repositories, and people
-				end up on this page by keeping at it.
+				Contribute to our projects, communicate with us on Discord, and help us
+				build a better open-source community.
 			</p>
 		</div>
 		<Button

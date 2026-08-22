@@ -20,17 +20,7 @@ export default defineConfig(
 	{
 		languageOptions: { globals: { ...globals.browser, ...globals.node } },
 		rules: {
-			// typescript-eslint strongly recommend that you do not use the no-undef lint rule on TypeScript projects.
-			// see: https://typescript-eslint.io/troubleshooting/faqs/eslint/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
 			'no-undef': 'off',
-
-			// This site links out constantly. Every job, crew tag and crib slot
-			// points at GitHub or a vendor's docs, and those hrefs come from data,
-			// so the rule cannot tell them from internal routes and flags them all.
-			// Internal navigation is already forced through SvelteKit's typed
-			// `resolve()`, which fails the build on a bad route, so the link half of
-			// this rule has nothing left to catch here. The goto/pushState/
-			// replaceState half stays on.
 			'svelte/no-navigation-without-resolve': ['error', { ignoreLinks: true }]
 		}
 	},

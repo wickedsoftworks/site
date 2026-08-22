@@ -1,13 +1,5 @@
 import type { PageServerLoad } from './$types';
 
-/**
- * The one tool that needs the server: only the server sees the connecting
- * address and the request headers. Nothing is stored and nothing is forwarded
- * to a third party. It reads the request we already received and reports it
- * straight back.
- */
-
-/** Headers worth surfacing, in the order they should be displayed. */
 const INTERESTING = [
 	'user-agent',
 	'accept-language',
@@ -19,7 +11,6 @@ const INTERESTING = [
 	'referer'
 ] as const;
 
-/** Proxy headers, shown separately because they explain where the IP came from. */
 const FORWARDING = [
 	'x-forwarded-for',
 	'x-real-ip',

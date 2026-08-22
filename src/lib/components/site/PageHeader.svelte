@@ -4,8 +4,6 @@
 	let { title, lead, actions }: { title: string; lead: string; actions?: Snippet } = $props();
 </script>
 
-<!-- Every inner page opens the same way: heading, one paragraph at a readable
-     measure, optional action. No eyebrow above the heading. -->
 <header class="flex flex-col gap-6 border-b border-line pb-10 sm:pb-12">
 	<div class="flex flex-col gap-4">
 		<h1 class="text-3xl font-semibold tracking-tight text-fg sm:text-4xl">

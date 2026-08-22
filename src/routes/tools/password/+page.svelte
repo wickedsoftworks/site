@@ -10,7 +10,6 @@
 		digits: '0123456789',
 		symbols: '!@#$%^&*-_=+?'
 	};
-	/** Characters people misread when copying by hand. */
 	const AMBIGUOUS = 'l1IO0o';
 
 	let length = $state(20);
@@ -30,11 +29,6 @@
 		return chars;
 	});
 
-	/**
-	 * Rejection sampling rather than `% alphabet.length`: the modulo shortcut
-	 * biases toward the first characters of the set whenever 256 is not a
-	 * multiple of its length, which is nearly always.
-	 */
 	function pick(chars: string): string {
 		const limit = Math.floor(256 / chars.length) * chars.length;
 		const buffer = new Uint8Array(1);

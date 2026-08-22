@@ -12,7 +12,6 @@
 	let hyphens = $state(true);
 	let values = $state<string[]>([]);
 
-	/** Random v4, from the platform generator where available. */
 	function v4(): string {
 		if (typeof crypto.randomUUID === 'function') return crypto.randomUUID();
 		const bytes = crypto.getRandomValues(new Uint8Array(16));
@@ -21,11 +20,6 @@
 		return format(bytes);
 	}
 
-	/**
-	 * v7: 48-bit big-endian Unix milliseconds, then version/variant bits, then
-	 * random. Sorts lexicographically by creation time, which is why it is worth
-	 * having next to v4, because it makes a far better database key.
-	 */
 	function v7(): string {
 		const bytes = crypto.getRandomValues(new Uint8Array(16));
 		const ms = BigInt(Date.now());
@@ -55,7 +49,6 @@
 	);
 	const all = $derived(shown.join('\n'));
 
-	// A page that opens empty makes you press a button to see what it does.
 	$effect(() => {
 		if (values.length === 0) generate();
 	});

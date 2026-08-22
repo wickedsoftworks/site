@@ -7,6 +7,3 @@ bun.lockb
 
 # Miscellaneous
 /static/
-
-# Design-tooling state (generated caches and review screenshots)
-/.impeccable/

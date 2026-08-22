@@ -7,8 +7,6 @@
 	let { project }: { project: Project } = $props();
 </script>
 
-<!-- A cell in a ruled grid, not a floating card: the parent draws the hairlines
-     so a list of projects reads as one table rather than a scatter of boxes. -->
 <svelte:element
 	this={project.repo ? 'a' : 'div'}
 	href={project.repo ?? undefined}
@@ -17,8 +15,7 @@
 	class="group relative flex flex-col gap-3 p-5 transition-colors duration-150 sm:p-6
 	       {project.repo ? 'hover:bg-surface-2' : ''}"
 >
-	<!-- Stacked on a phone: a long status like "Seeking contributors" beside a
-	     wrapping title squeezed both into slivers. -->
+
 	<div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
 		<h3 class="text-[0.9375rem] leading-snug font-medium text-fg">
 			{project.name}

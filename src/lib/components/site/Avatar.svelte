@@ -6,10 +6,6 @@
 		size = 64,
 		class: className = ''
 	}: { member: MemberView; size?: number; class?: string } = $props();
-
-	// The build pipeline may have had no network, or the source URL may have
-	// died. Either way there is no file on disk, so fall back to the monogram
-	// rather than showing a broken image.
 	let failed = $state(false);
 	const showImage = $derived(!failed);
 </script>

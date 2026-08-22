@@ -1,10 +1,5 @@
 <script lang="ts">
 	import type { SVGAttributes } from 'svelte/elements';
-
-	// Lucide dropped brand marks in v1, and "View on GitHub" next to a generic
-	// git-branch glyph reads as a near-miss. This is the official mark, drawn on
-	// Lucide's 24-unit box so it sizes and colours identically to every other
-	// icon on the site. Filled rather than stroked, as the mark is defined.
 	let { class: className = 'size-4', ...rest }: SVGAttributes<SVGElement> = $props();
 </script>
 
