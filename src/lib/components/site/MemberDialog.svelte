@@ -54,21 +54,10 @@
 							</span>
 						{/if}
 					</div>
-					{#if member.placeholder}
-						<Placeholder class="mt-1" />
-					{/if}
 				</div>
 
 				{#if member.bio}
 					<p class="text-sm leading-relaxed text-fg-muted">{member.bio}</p>
-				{/if}
-
-				{#if member.focus.length > 0}
-					<div class="flex flex-wrap items-center gap-x-3 gap-y-2">
-						{#each member.focus as item (item)}
-							<span class="font-mono text-xs text-fg-subtle">{item}</span>
-						{/each}
-					</div>
 				{/if}
 			</div>
 
