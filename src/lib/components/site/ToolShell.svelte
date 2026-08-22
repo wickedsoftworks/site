@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<title>{tool ? `${tool.name} at@Wicked Softworks` : 'Tools @ Wicked Softworks'}</title>
+	<title>{tool ? `${tool.name} @ Wicked Softworks` : 'Tools @ Wicked Softworks'}</title>
 	{#if tool}
 		<meta name="description" content={tool.blurb} />
 	{/if}
