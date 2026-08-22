@@ -22,13 +22,5 @@ Thumbs.db
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-# Design-tooling state. The shared config is tracked; per-machine settings,
-# the hook's cache and review screenshots are not.
-/.impeccable/config.local.json
-/.impeccable/hook.cache.json
-/.impeccable/review/
-/.impeccable/mocks/
-
-# Editor-local and design-tool session state
-/.claude/settings.local.json
-/.impeccable/questions/
+# Avatars
+static/avatars/*

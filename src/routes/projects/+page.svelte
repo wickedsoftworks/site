@@ -28,7 +28,7 @@
 </script>
 
 <svelte:head>
-	<title>Projects at Wicked Softworks</title>
+	<title>Projects @ Wicked Softworks</title>
 	<meta
 		name="description"
 		content="All our projects, their status, and where the code lives."

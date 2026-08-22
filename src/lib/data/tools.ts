@@ -22,68 +22,68 @@ export interface Tool {
 export const tools: Tool[] = [
 	{
 		slug: 'ip',
-		name: 'IP information',
+		name: 'IP Information',
 		blurb: 'What this site can see about your connection.',
 		icon: Globe,
 		server: true
 	},
 	{
 		slug: 'uuid',
-		name: 'UUID generator',
+		name: 'UUID Generator',
 		blurb: 'Generate v4 and v7 UUIDs, one or a thousand.',
 		icon: Shuffle
 	},
 	{
 		slug: 'base64',
-		name: 'Base64',
+		name: 'Base64 Encoder/Decoder',
 		blurb: 'Encode and decode Base64, including URL-safe.',
 		icon: Binary
 	},
 	{
 		slug: 'hash',
-		name: 'Hash generator',
+		name: 'Hash Generator',
 		blurb: 'SHA-1, SHA-256, SHA-384 and SHA-512 digests.',
 		icon: Hash
 	},
 	{
 		slug: 'jwt',
-		name: 'JWT decoder',
+		name: 'JWT Decoder',
 		blurb: 'Read the header and payload of a token.',
 		icon: KeyRound
 	},
 	{
 		slug: 'url',
-		name: 'URL tools',
+		name: 'URL Tools',
 		blurb: 'Encode, decode, and break a URL into its parts.',
 		icon: Link
 	},
 	{
 		slug: 'json',
-		name: 'JSON formatter',
+		name: 'JSON Formatter',
 		blurb: 'Format, minify and validate JSON.',
 		icon: Braces
 	},
 	{
 		slug: 'timestamp',
-		name: 'Timestamp converter',
+		name: 'Timestamp Converter',
 		blurb: 'Unix time to a date, and back again.',
 		icon: Clock
 	},
 	{
 		slug: 'password',
-		name: 'Password generator',
+		name: 'Password Generator',
 		blurb: 'Cryptographically random strings and passphrases.',
 		icon: Key
 	},
 	{
 		slug: 'color',
-		name: 'Colour converter',
+		name: 'Color Converter',
 		blurb: 'Convert between hex, RGB, HSL and OKLCH.',
 		icon: Palette
 	},
 	{
 		slug: 'qr',
-		name: 'QR code',
+		name: 'QR Code Generator',
 		blurb: 'Turn text or a link into a QR code you can save.',
 		icon: QrCode
 	}
