@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-color",
+        "value": "#000",
+        "createdAt": "2026-08-16T19:24:32.644Z",
+        "reason": "Claude: used only as a color-mix/gradient ingredient for shadow, highlight and paint-wash construction, never as a surface color (verified by grep; the one literal border was replaced with the documented iron ramp step). The shadow vocabulary is recorded in .impeccable/design.json extensions.shadows, which the DESIGN.md spec forbids from living in colors."
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#fff",
+        "createdAt": "2026-08-16T19:24:32.720Z",
+        "reason": "Claude: used only as a color-mix/gradient ingredient for top-bevel highlights and enamel gloss, never as a surface color (verified by grep). Highlight values are recorded in .impeccable/design.json extensions.shadows."
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "999px",
+        "createdAt": "2026-08-16T19:44:48.042Z",
+        "reason": "scrollbar thumb pill; DESIGN.md still describes the replaced machine-shop world and is rewritten at finish"
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "src/routes/layout.css"
+        ],
+        "createdAt": "2026-08-16T19:44:48.117Z",
+        "reason": "user confirmed: asked for vite.dev's hero specifically, whose headline gradient is the reference; scoped to the single brand-phrase utility"
+      }
+    ]
+  }
+}

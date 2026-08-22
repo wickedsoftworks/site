@@ -1,0 +1,26 @@
+{
+  "placeholder-one": {
+    "avatar": "https://github.com/octocat.png",
+    "recipe": "webp-256-q82-cover-v1"
+  },
+  "placeholder-two": {
+    "avatar": "https://github.com/octocat.png",
+    "recipe": "webp-256-q82-cover-v1"
+  },
+  "placeholder-three": {
+    "avatar": "https://github.com/octocat.png",
+    "recipe": "webp-256-q82-cover-v1"
+  },
+  "placeholder-four": {
+    "avatar": "https://github.com/octocat.png",
+    "recipe": "webp-256-q82-cover-v1"
+  },
+  "placeholder-five": {
+    "avatar": "https://github.com/octocat.png",
+    "recipe": "webp-256-q82-cover-v1"
+  },
+  "placeholder-six": {
+    "avatar": "https://github.com/octocat.png",
+    "recipe": "webp-256-q82-cover-v1"
+  }
+}

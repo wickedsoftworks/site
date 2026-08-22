@@ -1,0 +1,107 @@
+{
+	"$comment": "Edit this file to change the members directory. `avatar` is any image URL; scripts/avatars.mjs fetches it at build time and writes a normalized square to static/avatars/<id>.webp. Set `placeholder` to false once an entry describes a real person.",
+	"members": [
+		{
+			"id": "placeholder-one",
+			"name": "Placeholder One",
+			"handle": "octocat",
+			"role": "Direction",
+			"pronouns": "",
+			"location": "",
+			"bio": "Replace with a real member. This entry exists to show a profile carrying everything the dialog can display: a role, a location, a short biography, focus areas and outbound links.",
+			"focus": ["direction", "release"],
+			"avatar": "https://github.com/octocat.png",
+			"links": {
+				"github": "https://github.com/octocat",
+				"website": "",
+				"email": ""
+			},
+			"placeholder": true
+		},
+		{
+			"id": "placeholder-two",
+			"name": "Placeholder Two",
+			"handle": "octocat",
+			"role": "Architecture",
+			"pronouns": "",
+			"location": "",
+			"bio": "A second entry, here to show how the grid reads with more than one face in it and how a profile with fewer fields degrades.",
+			"focus": ["architecture", "review"],
+			"avatar": "https://github.com/octocat.png",
+			"links": {
+				"github": "https://github.com/octocat",
+				"website": "",
+				"email": ""
+			},
+			"placeholder": true
+		},
+		{
+			"id": "placeholder-three",
+			"name": "Placeholder Three",
+			"handle": "octocat",
+			"role": "Infrastructure",
+			"pronouns": "",
+			"location": "",
+			"bio": "Build, deploy, and everything that has to run unattended.",
+			"focus": ["infra", "ci"],
+			"avatar": "https://github.com/octocat.png",
+			"links": {
+				"github": "https://github.com/octocat",
+				"website": "",
+				"email": ""
+			},
+			"placeholder": true
+		},
+		{
+			"id": "placeholder-four",
+			"name": "Placeholder Four",
+			"handle": "octocat",
+			"role": "Correctness",
+			"pronouns": "",
+			"location": "",
+			"bio": "Tests, correctness, and the health of what is already released.",
+			"focus": ["testing", "correctness"],
+			"avatar": "https://github.com/octocat.png",
+			"links": {
+				"github": "https://github.com/octocat",
+				"website": "",
+				"email": ""
+			},
+			"placeholder": true
+		},
+		{
+			"id": "placeholder-five",
+			"name": "Placeholder Five",
+			"handle": "octocat",
+			"role": "Community",
+			"pronouns": "",
+			"location": "",
+			"bio": "The voice to contributors, issues, and everyone outside the collective.",
+			"focus": ["community", "docs"],
+			"avatar": "https://github.com/octocat.png",
+			"links": {
+				"github": "https://github.com/octocat",
+				"website": "",
+				"email": ""
+			},
+			"placeholder": true
+		},
+		{
+			"id": "placeholder-six",
+			"name": "Placeholder Six",
+			"handle": "octocat",
+			"role": "Design",
+			"pronouns": "",
+			"location": "",
+			"bio": "Interface, identity, and how the work presents itself.",
+			"focus": ["design", "frontend"],
+			"avatar": "https://github.com/octocat.png",
+			"links": {
+				"github": "https://github.com/octocat",
+				"website": "",
+				"email": ""
+			},
+			"placeholder": true
+		}
+	]
+}
