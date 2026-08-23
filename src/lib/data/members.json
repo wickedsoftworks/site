@@ -18,14 +18,14 @@
 		{
 			"id": "amplified",
 			"name": "Amplified",
-			"handle": "amplified",
+			"handle": "bappelsp",
 			"role": "Co-Founder",
 			"pronouns": "he/him",
 			"location": "United States of America",
 			"bio": "",
-			"avatar": "",
+			"avatar": "https://avatars.githubusercontent.com/u/260317990?v=4",
 			"links": {
-				"github": "",
+				"github": "https://github.com/bappelsp",
 				"website": "",
 				"email": "amplified@wickedsoft.works"
 			}
@@ -48,14 +48,14 @@
 		{
 			"id": "taless",
 			"name": "taless",
-			"handle": "taless",
+			"handle": "talessz",
 			"role": "Admin",
 			"pronouns": "he/him",
 			"location": "United States of America",
 			"bio": "",
-			"avatar": "",
+			"avatar": "https://avatars.githubusercontent.com/u/320022622?s=400&u=6294ea8d1b0ad8115eafa71f46a15cfeb1927018&v=4",
 			"links": {
-				"github": "",
+				"github": "https://github.com/talessz",
 				"website": "",
 				"email": "taless@wickedsoft.works"
 			}
