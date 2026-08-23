@@ -3,8 +3,16 @@
     "avatar": "https://avatars.githubusercontent.com/u/100317628?v=4",
     "recipe": "webp-256-q82-cover-v1"
   },
+  "amplified": {
+    "avatar": "https://avatars.githubusercontent.com/u/260317990?v=4",
+    "recipe": "webp-256-q82-cover-v1"
+  },
   "bearcat": {
     "avatar": "https://avatars.githubusercontent.com/u/57464151?v=4",
+    "recipe": "webp-256-q82-cover-v1"
+  },
+  "taless": {
+    "avatar": "https://avatars.githubusercontent.com/u/320022622?s=400&u=6294ea8d1b0ad8115eafa71f46a15cfeb1927018&v=4",
     "recipe": "webp-256-q82-cover-v1"
   }
 }

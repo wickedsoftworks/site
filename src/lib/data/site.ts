@@ -1,4 +1,4 @@
-export const GITHUB_ORG = 'github.com/WickedSoftworks';
+export const GITHUB_ORG = 'https://github.com/WickedSoftworks';
 
 export type ProjectStatus = 'active' | 'seeking' | 'paused' | 'shipped' | 'planned';
 export const STATUS_LABEL: Record<ProjectStatus, string> = {
